@@ -100,9 +100,8 @@ extension Serializable {
 		return serializer.dictionary
 	}
 
-	init?(dictionary: [String: String]) throws {
-		let serializer = Serializer(dictionary: dictionary, direction: .deserialize)
-		self.init()
-		try self.map(s: serializer)
+	public func deserialize(serialized: [String: String]) throws {
+		let serializer = Serializer(dictionary: serialized, direction: .deserialize)
+		try map(s: serializer)
 	}
 }
