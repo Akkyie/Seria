@@ -66,7 +66,7 @@ public class Serializer {
 	private var dictionary: [String: String]
 	private var direction: Direction
 
-	subscript(name: String) -> PropertyInfo {
+	public subscript(name: String) -> PropertyInfo {
 		get {
 			return PropertyInfo(serializer: self, name: name)
 		}
